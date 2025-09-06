@@ -1,3 +1,11 @@
+#Blob storage
+terraform {
+  backend "azurerm" {
+    storage_account_name = "REPLACE_WITH_STORAGE_ACCOUNT"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
 # 1. Resource Group
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
